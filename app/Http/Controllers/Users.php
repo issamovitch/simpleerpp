@@ -12,26 +12,17 @@ use Redirect;
 
 class Users extends BaseController
 {
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
     }
 
     public function index()
     {
-        $users      = User::with("role", "designation")->orderby("created_at", "desc")->get();
-        $breadcrumb = [
-            "title" => __("l.Users"), "current" => __("l.Users List"),
-            "links" => [
-                ["name" => __("l.Home"), "route" => route('home')],
-                ["name" => __("l.Users"), "route" => route('users.index')]
-            ]
-        ];
-        return Inertia::render("company/users/index",
-        [
-            "users" => $users,
-            "breadcrumb" => $breadcrumb
-        ]);
+        $users          = User::with("role", "designation")->orderby("created_at", "desc")->get();
+        $roles          = Role::orderby("created_at", "desc")->get();
+        $designations   = Designation::orderby("created_at", "desc")->get();
+        $departments    = Department::orderby("created_at", "desc")->get();
+        return Inertia::render("company/users/index", ["users" => $users, "roles" => $roles, "designations" => $designations, "departments" => $departments]);
     }
 
     public function add(){
@@ -39,17 +30,8 @@ class Users extends BaseController
         $designations   = Designation::orderby("created_at", "desc")->get();
         $users          = User::with("role", "designation")->orderby("created_at", "desc")->get();
         $departments    = Department::orderby("created_at", "desc")->get();
-
-        $breadcrumb = [
-            "title" => __("l.Users"), "current" => __("l.Add User"),
-            "links" => [
-                ["name" => __("l.Home"), "route" => route('home')],
-                ["name" => __("l.Users"), "route" => route('users.index')]
-            ]
-        ];
         return Inertia::render("company/users/add",
             [
-                "breadcrumb" => $breadcrumb,
                 "users" => $users,
                 "roles" => $roles,
                 "designations" => $designations,
@@ -128,18 +110,7 @@ class Users extends BaseController
         if (!$user)
             return back();
 
-        $breadcrumb = [
-            "title" => __("l.Users"), "current" => __("l.User Details"),
-            "links" => [
-                ["name" => __("l.Home"), "route" => route('home')],
-                ["name" => __("l.Users"), "route" => route('users.index')]
-            ]
-        ];
-        return Inertia::render("company/users/view",
-            [
-                "breadcrumb" => $breadcrumb,
-                "user" => $user,
-            ]);
+        return Inertia::render("company/users/view", ["user" => $user]);
     }
 
     public function edit($id = null){
@@ -151,17 +122,8 @@ class Users extends BaseController
         $designations   = Designation::orderby("created_at", "desc")->get();
         $users          = User::with("role", "designation")->orderby("created_at", "desc")->get();
         $departments    = Department::orderby("created_at", "desc")->get();
-
-        $breadcrumb = [
-            "title" => __("l.Users"), "current" => __("l.Edit User"),
-            "links" => [
-                ["name" => __("l.Home"), "route" => route('home')],
-                ["name" => __("l.Users"), "route" => route('users.index')]
-            ]
-        ];
         return Inertia::render("company/users/edit",
             [
-                "breadcrumb" => $breadcrumb,
                 "user" => $user,
                 "users" => $users,
                 "roles" => $roles,
@@ -213,5 +175,18 @@ class Users extends BaseController
         $user->save();
 
         return redirect()->route("users.index")->with("success", __("l.Data Updated Successfully"));
+    }
+
+    public function delete($id = null){
+        $user = User::find($id);
+        if (!$user)
+            return back();
+
+        if($user->image and file_exists(storage_path("app/".$user->image)) and is_file(storage_path("app/".$user->image)))
+            unlink(storage_path("app/".$user->image));
+
+        $user->delete();
+
+        return redirect()->route("users.index")->with("success", __("l.Data Deleted Successfully"));
     }
 }

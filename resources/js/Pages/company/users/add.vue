@@ -1,5 +1,5 @@
 <template>
-    <Company :title="breadcrumb.title" :breadcrumb="breadcrumb">
+    <company :title="__('l.Users')" :pn="__('l.Users List')" :pl="route('users.index')" :current="__('l.Add User')">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title float-left">{{ __("l.Add User") }}</h3>
@@ -220,16 +220,17 @@
                                 </div>
                             </div>
                         </tab-content>
-                        <!-- Buttons Templates -->
-                        <template slot="next" slot-scope="props">
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-arrow-right"></i> <span>{{__('l.Next')}}</span></button>
+                        <!-- Footer -->
+                        <template slot="footer" slot-scope="props">
+                            <div class="wizard-footer-left">
+                                <wizard-button class="btn btn-primary" v-if="props.activeTabIndex > 0 && !props.isLastStep" @click.native="props.prevTab()" :style="props.fillButtonStyle"><i class="fa fa-arrow-left"></i> <span>{{__('l.Back')}}</span></wizard-button>
+                            </div>
+                            <div class="wizard-footer-right">
+                                <wizard-button v-if="!props.isLastStep" @click.native="props.nextTab()" class="btn btn-primary wizard-footer-right w-150" :style="props.fillButtonStyle"><i class="fa fa-arrow-right"></i> <span>{{__('l.Next')}}</span></wizard-button>
+                                <wizard-button v-if="props.isLastStep||props.activeTabIndex==0" @click.native="save_user" class="btn btn-primary wizard-footer-right mr-2" :style="props.fillButtonStyle"><i class="fa fa-save"></i> <span>{{__('l.Submit')}}</span></wizard-button>
+                            </div>
                         </template>
-                        <template slot="prev" slot-scope="prev">
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-arrow-left"></i> <span>{{__('l.Back')}}</span></button>
-                        </template>
-                        <template slot="finish" slot-scope="finish">
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-save"></i> <span>{{__('l.Submit')}}</span></button>
-                        </template>
+                        <!-- End Footer -->
                     </form-wizard>
                 </form>
             </div>
@@ -291,18 +292,19 @@
 
 <script>
 
-import Company from "../layout/Company";
+import company from "../layout/company"
 // VueFormWizard
-import {FormWizard, TabContent} from 'vue-form-wizard'
+import {FormWizard, TabContent, WizardButton} from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 
 export default {
     components: {
-        Company,
+        company,
         FormWizard,
-        TabContent
+        TabContent,
+        WizardButton
     },
-    props:["breadcrumb", "users", "roles", "designations", "departments"],
+    props:["users", "roles", "designations", "departments"],
     data(){
         return{
             name: null,

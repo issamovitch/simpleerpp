@@ -1,5 +1,5 @@
 <template>
-    <Company :title="breadcrumb.title" :breadcrumb="breadcrumb">
+    <company :title="__('l.Users')" :pn="__('l.Users List')" :pl="route('users.index')" :current="__('l.Edit User')">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title float-left">{{ __("l.Edit User") }}</h3>
@@ -164,32 +164,32 @@
                                                 <label><span>{{__("l.Nationality")}}</span></label>
                                                 <select class="form-control" name="nationality" autocomplete="off">
                                                     <option value="">{{__("l.Choose")}}</option>
-                                                    <option v-for="(k, v) in countries()" :value="v">{{k}}</option>
+                                                    <option :selected="v==user.nationality" v-for="(k, v) in countries()" :value="v">{{k}}</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
                                                 <label><span>{{__("l.N° Identification")}}</span></label>
-                                                <input type="text" class="form-control" name="num_identification" autocomplete="off">
+                                                <input type="text" :value="user.num_identification" class="form-control" name="num_identification" autocomplete="off">
                                             </div>
                                             <div class="form-group">
                                                 <label><span>{{__("l.N° Passport")}}</span></label>
-                                                <input type="text" class="form-control" name="num_passport" autocomplete="off">
+                                                <input type="text" :value="user.num_passport" class="form-control" name="num_passport" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label><span>{{__("l.Date Of Birth")}}</span></label>
-                                                <input type="date" class="form-control" name="date_of_birth" autocomplete="off">
+                                                <input type="date" :value="user.date_of_birth" class="form-control" name="date_of_birth" autocomplete="off">
                                             </div>
                                             <div class="form-group">
                                                 <label><span>{{__("l.Place Of Birth")}}</span></label>
-                                                <input type="text" class="form-control" name="place_of_birth" autocomplete="off">
+                                                <input type="text" :value="user.place_of_birth" class="form-control" name="place_of_birth" autocomplete="off">
                                             </div>
                                             <div class="form-group">
                                                 <label><span>{{__("l.Native Country")}}</span></label>
                                                 <select class="form-control" name="native_country" autocomplete="off">
                                                     <option value="">{{__("l.Choose")}}</option>
-                                                    <option v-for="(k, v) in countries()" :value="v">{{k}}</option>
+                                                    <option :selected="v==user.native_country" v-for="(k, v) in countries()" :value="v">{{k}}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -205,33 +205,33 @@
                                         <label><span>{{__("l.Certificate Level")}}</span></label>
                                         <select class="form-control" name="certificate_level" autocomplete="off">
                                             <option value="">{{__("l.Choose")}}</option>
-                                            <option value="Bachelor">{{__("l.Bachelor")}}</option>
-                                            <option value="Master">{{__("l.Master")}}</option>
-                                            <option value="Other">{{__("l.Other")}}</option>
+                                            <option :selected="user.certificate_level=='Bachelor'" value="Bachelor">{{__("l.Bachelor")}}</option>
+                                            <option :selected="user.certificate_level=='Master'" value="Master">{{__("l.Master")}}</option>
+                                            <option :selected="user.certificate_level=='Other'" value="Other">{{__("l.Other")}}</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label><span>{{__("l.Field Of Study")}}</span></label>
-                                        <input type="text" class="form-control" name="field_of_study" autocomplete="off">
+                                        <input type="text" :value="user.field_of_study" class="form-control" name="field_of_study" autocomplete="off">
                                     </div>
                                     <div class="form-group">
                                         <label><span>{{__("l.University")}}</span></label>
-                                        <input type="text" class="form-control" name="university" autocomplete="off">
+                                        <input type="text" :value="user.university" class="form-control" name="university" autocomplete="off">
                                     </div>
                                 </div>
                             </div>
                         </tab-content>
-                        <!-- Buttons Templates -->
-                        <template slot="next" slot-scope="props">
-                            <button v-on:click.prevent="save_user" v-if="props.activeTabIndex==0" type="button" class="btn btn-primary w-150"><i class="fa fa-save"></i> <span>{{__('l.Submit')}}</span></button>
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-arrow-right"></i> <span>{{__('l.Next')}}</span></button>
+                        <!-- Footer -->
+                        <template slot="footer" slot-scope="props">
+                            <div class="wizard-footer-left">
+                                <wizard-button class="btn btn-primary" v-if="props.activeTabIndex > 0 && !props.isLastStep" @click.native="props.prevTab()" :style="props.fillButtonStyle"><i class="fa fa-arrow-left"></i> <span>{{__('l.Back')}}</span></wizard-button>
+                            </div>
+                            <div class="wizard-footer-right">
+                                <wizard-button v-if="!props.isLastStep" @click.native="props.nextTab()" class="btn btn-primary wizard-footer-right w-150" :style="props.fillButtonStyle"><i class="fa fa-arrow-right"></i> <span>{{__('l.Next')}}</span></wizard-button>
+                                <wizard-button v-if="props.isLastStep||props.activeTabIndex==0" @click.native="save_user" class="btn btn-primary wizard-footer-right mr-2" :style="props.fillButtonStyle"><i class="fa fa-save"></i> <span>{{__('l.Submit')}}</span></wizard-button>
+                            </div>
                         </template>
-                        <template slot="prev" slot-scope="prev">
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-arrow-left"></i> <span>{{__('l.Back')}}</span></button>
-                        </template>
-                        <template slot="finish" slot-scope="finish">
-                            <button type="button" class="btn btn-primary w-150"><i class="fa fa-save"></i> <span>{{__('l.Submit')}}</span></button>
-                        </template>
+                        <!-- End Footer -->
                     </form-wizard>
                 </form>
             </div>
@@ -293,18 +293,19 @@
 
 <script>
 
-import Company from "../layout/Company";
+import company from "../layout/company"
 // VueFormWizard
-import {FormWizard, TabContent} from 'vue-form-wizard'
+import {FormWizard, TabContent, WizardButton} from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
 
 export default {
     components: {
-        Company,
+        company,
         FormWizard,
-        TabContent
+        TabContent,
+        WizardButton
     },
-    props:["breadcrumb", "users", "roles", "designations", "departments" , "user"],
+    props:["users", "roles", "designations", "departments" , "user"],
     data(){
         return{
             name: this.$props.user.name,

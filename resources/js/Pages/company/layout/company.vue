@@ -42,7 +42,7 @@ export default {
 
 <style>
 
-.btn, .nav-pills .nav-link, .card, .card-header {
+.btn, .nav-pills .nav-link, .card, .card-header, .form-control, .input-group-text {
     border-radius: 0px !important;
 }
 
@@ -54,8 +54,21 @@ export default {
     width: 150px !important;
 }
 
+.w-120{
+    width: 120px !important;
+}
+
 .swal2-icon.swal2-warning::before{
     display: none;
 }
 
+.user-image-list {
+    width: 60px !important;
+    height: 60px !important;
+}
+.user-image-grid{
+    border: 1px solid #d5d5d5;
+    width: 100%;
+    height: 80px;
+}
 </style>

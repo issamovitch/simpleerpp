@@ -1,5 +1,5 @@
 <template>
-    <Company :title="breadcrumb.title" :breadcrumb="breadcrumb">
+    <company :title="__('l.Users')" :pn="__('l.Users List')" :pl="route('users.index')" :current="__('l.User Details')">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title float-left">{{ __("l.User Details") }}</h3>
@@ -142,13 +142,13 @@
 
 <script>
 
-import Company from "../layout/Company";
+import company from "../layout/company";
 
 export default {
     components:{
-        Company
+        company
     },
-    props: ["breadcrumb", "user"],
+    props: ["user"],
 }
 </script>
 
