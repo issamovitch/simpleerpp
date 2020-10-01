@@ -9,7 +9,7 @@
                     <Inertia-link :href="route('users.add')" class="btn btn-xs btn-primary float-right ml-3"><i class="fa fa-plus"></i> <span>{{__("l.Add User")}}</span></Inertia-link>
                     <div class="dropdown float-right ml-3">
                         <button v-on:click="show_filter=!show_filter" class="btn btn-xs btn-primary w-150"><i class="fa fa-filter"></i> <span>{{__("l.Filters")}}</span></button>
-                        <div v-if="show_filter && table_users" id="dropdownMenuButton">
+                        <div v-if="show_filter" id="dropdownMenuButton">
                             <div class="input-group">
                                 <div class="input-group-prepend w-120">
                                     <span class="input-group-text w-120">{{__("l.Filter By")}}</span>
@@ -155,7 +155,7 @@
                     <tbody>
                         <tr v-for="(user, i) in filtered_users" v-if="filtered_users.length>0">
                             <td class="text-center align-middle">{{ i + 1 }}</td>
-                            <td class="align-middle">
+                            <td class="align-middle" width="60">
                                 <Inertia-link :href="route('users.view', user.id)">
                                     <img v-if="user.image" :src="asset('/storage/app/'+user.image)" alt="" class="img-thumbnail user-image-list">
                                     <img v-else :src="asset('public/no-image.png')" alt="" class="img-thumbnail user-image-list">
@@ -168,7 +168,7 @@
                             <td class="text-center align-middle">
                                 <Inertia-link :href="route('users.view', user.id)" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> <span>{{__("l.View")}}</span></Inertia-link>
                                 <Inertia-link :href="route('users.edit', user.id)" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> <span>{{__("l.Edit")}}</span></Inertia-link>
-                                <a v-if="$page.auth.user.id!=user.id" href="#" v-on:click.prevent="delete_user(user.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> <span>{{__("l.Delete")}}</span></a>
+                                <Inertia-link v-if="$page.auth.user.id!=user.id" href="#" v-on:click.prevent="delete_user(user.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> <span>{{__("l.Delete")}}</span></Inertia-link>
                                 <a v-else href="#" disabled="" class="btn btn-danger disabled btn-xs"><i class="fa fa-trash"></i> <span>{{__("l.Delete")}}</span></a>
                             </td>
                         </tr>
@@ -299,7 +299,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
     .dropdown-toggle::after{
         display: none;

@@ -6,7 +6,19 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <Inertia-Link :href="route('dashboard')" class="nav-link">{{ __("l.Dashboard") }}</Inertia-Link>
+                <Inertia-Link :href="route('dashboard')" class="nav-link"><i class="fa fa-home"></i> {{ __("l.Dashboard") }}</Inertia-Link>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <Inertia-Link :href="route('settings.index')" class="nav-link"><i class="fa fa-cog"></i> {{ __("l.Settings") }}</Inertia-Link>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-plus-circle"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <Inertia-link :href="route('users.add')" class="dropdown-item">{{__("l.Add User")}}</Inertia-link>
+                    <Inertia-link :href="route('clients.add')" class="dropdown-item">{{__("l.Add Client")}}</Inertia-link>
+                </div>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

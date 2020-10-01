@@ -85,3 +85,28 @@ if (!function_exists('main_sectors')) {
             "Transport", "Transport Equipment Manufacturing", "Utilities (Water, Gas, Electricity)", "Agriculture, Plantations & Other Rural Sectors", "Other"];
     }
 }
+
+if (!function_exists('sectors')) {
+    function sectors()
+    {
+        return ["Commerce", "Education", "Entertainment", "Construction",
+            "Chemical Industries", "Basic Metal Production", "Financial Services", "Food, Drink & Tobacco",
+            "Forestry, Wood, Pulp and Paper", "Health Services", "Hotels, Tourism & Catering", "Mining",
+            "Mechanical/Electrical Engineering", "Media, Culture, Graphical", "Oil & Gas Production", "Postal & Telecommunication",
+            "Public Service", "Shipping, Ports, Fisheries, Inland Waterways", "Textiles, Clothing, Leather, footwear",
+            "Transport", "Transport Equipment Manufacturing", "Utilities (Water, Gas, Electricity)", "Agriculture, Plantations & Other Rural Sectors", "Other"];
+    }
+}
+
+if (!function_exists('generateRandomString')) {
+    function generateRandomString($length = 8)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+}

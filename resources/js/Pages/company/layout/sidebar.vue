@@ -17,8 +17,14 @@
                     </li>
                     <li class="nav-item">
                         <Inertia-link :href="route('users.index')" class="nav-link" v-bind:class="{'active': current_route('users.*')}">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-users"></i>
                             <p>{{__("l.Users")}}</p>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
+                        <Inertia-link :href="route('clients.index')" class="nav-link" v-bind:class="{'active': current_route('clients.*')}">
+                            <i class="nav-icon fas fa-briefcase"></i>
+                            <p>{{__("l.Clients")}}</p>
                         </Inertia-link>
                     </li>
                     <li class="nav-item">

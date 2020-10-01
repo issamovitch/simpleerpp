@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Clients.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_01_152727_create_clients_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/add.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/view.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/users/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/users/add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/users/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/users/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/users/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/users/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/users/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/users/view.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,28 +178,33 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1i8zRKfTGZtyLAerk4QCGMA1fyf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/clients" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/clients" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/users" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/Pages" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -213,25 +224,43 @@
       <workItem from="1601303998693" duration="10356000" />
       <workItem from="1601315194387" duration="10229000" />
       <workItem from="1601330176665" duration="9855000" />
-      <workItem from="1601485469454" duration="13828000" />
+      <workItem from="1601485469454" duration="13904000" />
+      <workItem from="1601564733732" duration="13462000" />
     </task>
+    <task id="LOCAL-00001" summary="Users">
+      <created>1601502916805</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601502916806</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601312510276">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1601312510276" />
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601339532918">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601502915130">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601339532918" />
-    <state x="347" y="162" key="run.anything.popup" timestamp="1601502841605">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601502915130" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601502923000">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1601502841605" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601502923000" />
+    <state x="347" y="162" key="run.anything.popup" timestamp="1601573016426">
+      <screen x="0" y="27" width="1366" height="693" />
+    </state>
+    <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1601573016426" />
   </component>
 </project>

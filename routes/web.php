@@ -32,6 +32,21 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::post('departments_save', "Users@departments_save")->name("departments_save");
         });
 
+        // Clients
+        Route::group(["as" => "clients.","prefix" => "clients"], function () {
+            Route::get('index', "Clients@index")->name("index");
+            Route::get('add', "Clients@add")->name("add");
+            Route::post('sectors_save', "Clients@sectors_save")->name("sectors_save");
+            Route::post('save_client_group', "Clients@save_client_group")->name("save_client_group");
+            Route::post('save', "Clients@save")->name("save");
+            Route::get('edit/{id?}', "Clients@edit")->name("edit");
+            Route::post('update', "Clients@update")->name("update");
+            Route::get('delete/{id?}', "Clients@delete")->name("delete");
+            Route::get('view/{id?}', "Clients@view")->name("view");
+            Route::get('reference_unique', "Clients@reference_unique")->name("reference_unique");
+
+        });
+
         // Settings
         Route::group(["prefix" => "settings", "as" => "settings."], function (){
             // General Settings
