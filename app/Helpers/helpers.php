@@ -22,8 +22,7 @@ if (!function_exists('all_lang')) {
 }
 
 if (!function_exists('mailit')) {
-    function mailit($to, $subject, $body,  $system = "Settings", $attachments = null, $from = null)
-    {
+    function mailit($to, $subject, $body,  $system = "Settings", $attachments = null, $from = null){
         try {
             init();
             Mail::to($to)->send(new TestMail($subject, $body, $attachments, $from));

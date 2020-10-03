@@ -6412,6 +6412,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -79705,7 +79706,23 @@ var render = function() {
                 _c("i", { staticClass: "fas fa-print" }),
                 _vm._v(" " + _vm._s(_vm.__("l.Print")))
               ]
-            )
+            ),
+            _vm._v(" "),
+            _vm.message.draft
+              ? _c(
+                  "inertia-link",
+                  {
+                    staticClass: "btn btn-default",
+                    attrs: {
+                      href: _vm.route("mailbox.send_draft", _vm.message.id)
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "far fa-envelope" }),
+                    _vm._v(" " + _vm._s(_vm.__("l.Send")))
+                  ]
+                )
+              : _vm._e()
           ],
           1
         )

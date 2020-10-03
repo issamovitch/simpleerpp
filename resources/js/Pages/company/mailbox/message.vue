@@ -43,6 +43,7 @@
                 <inertia-link :href="route('mailbox.inbox')" class="btn btn-default"><i class="fas fa-reply"></i> {{__("l.Return")}}</inertia-link>
                 <inertia-link :href="route('mailbox.delete_message', message.id)" @click.prevent="delete_confirm" class="btn btn-default"><i class="far fa-trash-alt"></i> {{__("l.Delete")}}</inertia-link>
                 <button @click.prevent="printSection" type="button" class="btn-print btn btn-default"><i class="fas fa-print"></i> {{__("l.Print")}}</button>
+                <inertia-link v-if="message.draft" :href="route('mailbox.send_draft', message.id)" class="btn btn-default"><i class="far fa-envelope"></i> {{__("l.Send")}}</inertia-link>
             </div>
         </div>
     </company>

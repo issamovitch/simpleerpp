@@ -61,6 +61,7 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get('sent', "Mailbox@sent")->name("sent");
             // Draft
             Route::get('draft', "Mailbox@draft")->name("draft");
+            Route::get('send_draft/{id?}', "Mailbox@send_draft")->name("send_draft");
             // Trash
             Route::get('trash', "Mailbox@trash")->name("trash");
             // Favorite

@@ -74,7 +74,10 @@ class Mailbox extends BaseController{
             }
         }
 
-        mailit(@$message->user_to->email, $message->subject, $message->text, "Mailbox", $message->attachments(), @$message->user_from->email);
+        $attachments = [];
+        foreach ($message->attachments as $attachment)
+            array_push($attachments, $attachment->path);
+        mailit(@$message->user_to->email, $message->subject, $message->text, "Mailbox", $attachments, @$message->user_from->email);
 
         return redirect()->route("mailbox.sent")->with("success", __("l.Data Added Successfully"));
     }
@@ -99,6 +102,22 @@ class Mailbox extends BaseController{
             ->paginate(20);
         $pagination = pagination($messages);
         return Inertia::render("company/mailbox/draft", compact("messages", "pagination"));
+    }
+
+    public function send_draft($id = null){
+        $message = MailboxMessage::with("attachments")->where(["id" => $id])
+            ->where("from", Auth::guard("web")->user()->id)
+            ->where(["draft" => 1])->first();
+        if ($message) {
+            $attachments = [];
+            foreach ($message->attachments as $attachment)
+                array_push($attachments, $attachment->path);
+            mailit(@$message->user_to->email, $message->subject, $message->text, "Mailbox", $attachments, @$message->user_from->email);
+            $message->draft = 0;
+            $message->save();
+        }
+
+        return redirect()->route("mailbox.sent")->with("success", __("l.Data Sent Successfully"));
     }
 
     // Trash

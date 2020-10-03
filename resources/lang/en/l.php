@@ -295,4 +295,5 @@ return array (
   'Yes' => 'Yes',
   'No' => 'No',
   'Confirmation' => 'Confirmation',
+  'Data Sent Successfully' => 'Data Sent Successfully',
 );
