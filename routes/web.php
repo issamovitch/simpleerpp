@@ -44,7 +44,34 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get('delete/{id?}', "Clients@delete")->name("delete");
             Route::get('view/{id?}', "Clients@view")->name("view");
             Route::get('reference_unique', "Clients@reference_unique")->name("reference_unique");
+        });
 
+        // Mailbox
+        Route::group(["as" => "mailbox.","prefix" => "mailbox"], function () {
+            // Labels
+            Route::get('get_labels', "Mailbox@get_labels")->name("get_labels");
+            Route::post('save_label', "Mailbox@save_label")->name("save_label");
+            Route::get('delete_label/{id?}', "Mailbox@delete_label")->name("delete_label");
+            // Compose
+            Route::get('compose', "Mailbox@compose")->name("compose");
+            Route::post('save_message', "Mailbox@save_message")->name("save_message");
+            // Inbox
+            Route::get('inbox', "Mailbox@inbox")->name("inbox");
+            // Sent
+            Route::get('sent', "Mailbox@sent")->name("sent");
+            // Draft
+            Route::get('draft', "Mailbox@draft")->name("draft");
+            // Trash
+            Route::get('trash', "Mailbox@trash")->name("trash");
+            // Favorite
+            Route::get('favorite', "Mailbox@favorite")->name("favorite");
+            // Operations
+            Route::get('unfavorite/{id?}', "Mailbox@unfavorite")->name("unfavorite");
+            Route::get('dofavorite/{id?}', "Mailbox@dofavorite")->name("dofavorite");
+            Route::post('delete', "Mailbox@delete")->name("delete");
+            Route::get('delete_message/{id?}', "Mailbox@delete_message")->name("delete_message");
+            Route::get('message/{id?}', "Mailbox@message")->name("message");
+            Route::post('search', "Mailbox@search")->name("search");
         });
 
         // Settings

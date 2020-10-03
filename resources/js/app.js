@@ -45,6 +45,25 @@ Vue.prototype.countries = function(x){
     return lang_to_vue[lang]["countries"]
 }
 
+// Format Date
+import moment from 'moment'
+Vue.filter('format-date-time', function(value) {
+    if (value) {
+        return moment(String(value)).format('YYYY-MM-DD hh:mm')
+    }
+})
+
+// VueHtmlToPaper
+import VueHtmlToPaper from "vue-html-to-paper";
+const options = {
+    name: "_blank",
+    specs: ["fullscreen=yes", "titlebar=yes", "scrollbars=yes"],
+    styles: [
+        Vue.prototype.asset("node_modules/bootstrap/dist/css/bootstrap.css")
+    ]
+};
+Vue.use(VueHtmlToPaper, options);
+
 // JQuery
 $(document).on("shown.bs.modal", ".modal", function () {
     $('input:first', this). trigger('focus')

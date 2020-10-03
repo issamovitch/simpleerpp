@@ -28,6 +28,13 @@
                         </Inertia-link>
                     </li>
                     <li class="nav-item">
+                        <Inertia-link :href="route('mailbox.inbox')" class="nav-link" v-bind:class="{'active': current_route('mailbox.*')}">
+                            <i class="nav-icon far fa-envelope"></i>
+                            <p>{{__("l.Mailbox")}}</p>
+                            <span v-if="$page.flash.unread_messages.length>0" class="badge bg-danger float-right">{{$page.flash.unread_messages.length}}</span>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
                         <Inertia-link :href="route('settings.index')" class="nav-link" v-bind:class="{'active': current_route('settings.*')}">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>{{ __("l.Settings") }}</p>

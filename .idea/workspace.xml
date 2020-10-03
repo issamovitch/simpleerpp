@@ -2,20 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Clients.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_01_152727_create_clients_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/add.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/view.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Mailbox.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Attachment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailboxLabel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailboxMessage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_02_001340_create_mailbox_labels_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_02_022742_create_mailbox_messages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_02_023100_create_attachments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/summernote/dist/summernote.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/summernote/dist/summernote.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/summernote/dist/summernote.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/summernote/dist/summernote.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/trumbowyg/dist/ui/icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/common/pagination.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/compose.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/draft.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/favorite.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/inbox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/mailbox-folder.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/mailbox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/message-row.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/message.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/sent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/trash.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/users/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/users/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/message.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/panel.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/subcopy.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/mail/text/table.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,13 +219,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/clients" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/mailbox" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/mailbox" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/clients" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/users" />
       <recent name="$PROJECT_DIR$" />
@@ -225,7 +254,11 @@
       <workItem from="1601315194387" duration="10229000" />
       <workItem from="1601330176665" duration="9855000" />
       <workItem from="1601485469454" duration="13904000" />
-      <workItem from="1601564733732" duration="13462000" />
+      <workItem from="1601564733732" duration="13731000" />
+      <workItem from="1601593437251" duration="18222000" />
+      <workItem from="1601635866774" duration="133000" />
+      <workItem from="1601659331483" duration="14451000" />
+      <workItem from="1601744738805" duration="5583000" />
     </task>
     <task id="LOCAL-00001" summary="Users">
       <created>1601502916805</created>
@@ -234,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601502916806</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Clients">
+      <created>1601580646670</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601580646670</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,21 +283,22 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users" />
+    <MESSAGE value="Clients" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clients" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601312510276">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1601312510276" />
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601502915130">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601580645659">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601502915130" />
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601502923000">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601580645659" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601580660178">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601502923000" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601580660178" />
     <state x="347" y="162" key="run.anything.popup" timestamp="1601573016426">
       <screen x="0" y="27" width="1366" height="693" />
     </state>

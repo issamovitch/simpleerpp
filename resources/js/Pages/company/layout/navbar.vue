@@ -22,6 +22,35 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
+            <!-- Unread Messages -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-envelope"></i>
+                    <span class="badge badge-danger navbar-badge">{{$page.flash.unread_messages.length}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <inertia-link v-for="message in $page.flash.unread_messages" :key="'message'+ message.id" :href="route('mailbox.message', message.id)" class="dropdown-item">
+                        <div class="media">
+                            <img v-if="message.user_from && message.user_from.image" :src="asset('storage/app/'+message.user_from.image)" alt="User Avatar" class="img-size-50 mr-3 img-circle" style="height: 50px;">
+                            <img v-else :src="asset('public/no-image.png')" alt="User Avatar" class="img-size-50 mr-3 img-circle" style="height: 50px;">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    {{(message.user_from)?message.user_from.name:''}}
+                                    <small v-if="message.label" class="text-white float-right text-center" style="font-size:0.7em;min-width: 60px; padding: 2px !important; border-radius: 2px;" v-bind:style="'background: '+message.label.color">{{message.label.name}}</small>
+                                </h3>
+                                <p class="text-sm">{{message.subject}}</p>
+                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{message.created_at|format-date-time}}</p>
+                            </div>
+                        </div>
+                    </inertia-link>
+                    <div class="dropdown-divider"></div>
+                    <inertia-link :href="route('mailbox.inbox')" class="dropdown-item dropdown-footer">{{__("l.See All Messages")}}</inertia-link>
+                </div>
+            </li>
+            <!-- End Unread Messages -->
+
+
+
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell"></i>
