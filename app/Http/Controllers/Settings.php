@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClientGroup;
+use App\Models\ContactGroup;
+use App\Models\CustomField;
 use App\Models\Sector;
 use App\Models\User;
 use App\Models\Department;
@@ -285,4 +287,50 @@ class Settings extends BaseController
 
         return back()->with("success", __("l.Data Saved Successfully"));
     }
+
+    // Contact Groups
+
+    public function contact_groups(){
+        $contact_groups  = ContactGroup::orderby("created_at", "desc")->get();
+        return Inertia::render("company/settings/contact_groups", compact("contact_groups"));
+    }
+
+    public function contact_groups_save(Request $request){
+        $request->validate(["name" => "required"]);
+        $contact_group               = new ContactGroup;
+        $contact_group->name         = $request->name;
+        $contact_group->save();
+
+        return back()->with("success", __("l.Data Saved Successfully"));
+    }
+
+    public function contact_groups_delete($id = null){
+        $contact_group       = ContactGroup::find($id);
+        if(!$contact_group)
+            return back();
+
+        $contact_group->delete();
+
+        return back()->with("success", __("l.Data Deleted Successfully"));
+    }
+
+    public function contact_groups_update(Request $request){
+        $contact_group       = ContactGroup::find($request->id);
+        if(!$contact_group)
+            return back();
+
+        $contact_group->name         = $request->name;
+        $contact_group->save();
+
+        return back()->with("success", __("l.Data Saved Successfully"));
+    }
+
+    // Custom Fields
+
+    public function custom_fields(){
+        $custom_fields  = CustomField::orderby("created_at", "desc")->get();
+        return Inertia::render("company/settings/custom_fields", compact("custom_fields"));
+    }
+
+
 }

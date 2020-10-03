@@ -28,6 +28,12 @@
                             <Inertia-link :href="route('settings.client_groups')" v-bind:class="{'active' : current_route()=='settings.client_groups'}" class="nav-link">
                                 {{ __("l.Client Groups") }}
                             </Inertia-link>
+                            <Inertia-link :href="route('settings.contact_groups')" v-bind:class="{'active' : current_route()=='settings.contact_groups'}" class="nav-link">
+                                {{ __("l.Contact Groups") }}
+                            </Inertia-link>
+                            <Inertia-link :href="route('settings.custom_fields')" v-bind:class="{'active' : current_route()=='settings.custom_fields'}" class="nav-link">
+                                {{ __("l.Custom Fields") }}
+                            </Inertia-link>
                         </div>
                     </div>
                     <div class="col-sm-10">

@@ -108,6 +108,16 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::post('client_groups_save', "Settings@client_groups_save")->name("client_groups_save");
             Route::post('client_groups_update', "Settings@client_groups_update")->name("client_groups_update");
             Route::get('client_groups_delete/{id?}', "Settings@client_groups_delete")->name("client_groups_delete");
+            // Contact Groups
+            Route::get("contact_groups", "Settings@contact_groups")->name("contact_groups");
+            Route::post("contact_groups_save", "Settings@contact_groups_save")->name("contact_groups_save");
+            Route::post("contact_groups_update", "Settings@contact_groups_update")->name("contact_groups_update");
+            Route::get("contact_groups_delete/{id?}", "Settings@contact_groups_delete")->name("contact_groups_delete");
+            // Custom fields
+            Route::get("custom_fields", "Settings@custom_fields")->name("custom_fields");
+            Route::post("add_field", "Settings@add_field")->name("add_field");
+            Route::post("update_field", "Settings@update_field")->name("update_field");
+            Route::get("delete_field/{id?}", "Settings@delete_field")->name("delete_field");
         });
 
     });

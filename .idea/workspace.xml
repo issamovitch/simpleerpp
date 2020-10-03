@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Models/ContactGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CustomField.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_03_192910_create_contact_groups_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_03_193924_create_custom_fields_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/contact_groups.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Mailbox.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Mailbox.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailbox/message.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/l.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/l.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -183,21 +187,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/mailbox" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/settings" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/settings" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/mailbox" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/clients" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/users" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/js/Pages" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages/company" />
     </key>
   </component>
   <component name="RunManager">
@@ -222,7 +227,7 @@
       <workItem from="1601593437251" duration="18222000" />
       <workItem from="1601635866774" duration="133000" />
       <workItem from="1601659331483" duration="14451000" />
-      <workItem from="1601744738805" duration="6429000" />
+      <workItem from="1601744738805" duration="8277000" />
     </task>
     <task id="LOCAL-00001" summary="Users">
       <created>1601502916805</created>
@@ -245,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601750842036</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mailbox">
+      <created>1601751854448</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601751854448</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,17 +275,29 @@
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1601312510276" />
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601750840709">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601751853901">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601750840709" />
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601580660178">
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601751853901" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601751860497">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601580660178" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601751860497" />
     <state x="347" y="162" key="run.anything.popup" timestamp="1601573016426">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1601573016426" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/company/settings/contact_groups.vue</url>
+          <line>19</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

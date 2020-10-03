@@ -296,4 +296,5 @@ return array (
   'No' => 'No',
   'Confirmation' => 'Confirmation',
   'Data Sent Successfully' => 'Data Sent Successfully',
+  'Add Contact Group' => 'Add Contact Group',
 );
