@@ -6,3 +6,22 @@
 @import "~admin-lte/dist/css/adminlte.min.css";
 // Animate.css
 @import "~animate.css/animate.css";
+// Multiselect
+@import "~vue-multiselect/dist/vue-multiselect.min.css";
+// General Style
+div:not(.view) .multiselect li:not(.multiselect__element) .multiselect__option{
+    display: none !important;
+}
+div:not(.view) .multiselect__tags{
+    border-radius: 0px;
+    border: 1px solid #ced4da;
+}
+div:not(.view) .multiselect__tag{
+    background: #007bff;
+}
+div:not(.view) .multiselect__option{
+    background: #007bff;
+}
+div:not(.view) .multiselect__option--highlight:after{
+    background: #0069d9;
+}

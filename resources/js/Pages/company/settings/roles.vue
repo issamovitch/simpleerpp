@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="roles_save" class="modal fade roles_save" id="add_role">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header"><h4 class="modal-title">{{ __("l.Add Role") }}</h4>
+                            <div class="modal-header bg-primary"><h4 class="modal-title">{{ __("l.Add Role") }}</h4>
                                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                             </div>
                             <div class="modal-body">
@@ -42,7 +42,7 @@
                         <div v-on:submit.prevent="roles_update(role.id)" class="modal fade" :id="'roles_update'+role.id">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div class="modal-header bg-primary">
                                         <h4 class="modal-title">{{ __("l.Edit Role")}}</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>

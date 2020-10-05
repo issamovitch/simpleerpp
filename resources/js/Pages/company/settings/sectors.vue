@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="sectors_save" class="modal fade save_sector" id="add_sector">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h5 class="modal-title">{{__("l.Add Sector")}}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -56,7 +56,7 @@
                 <form v-for="sector in sectors" v-on:submit.prevent="sectors_update(sector.id)" class="modal fade save_sector" :id="'sectors_update'+sector.id">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h5 class="modal-title">{{__("l.Edit Sector")}}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>

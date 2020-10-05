@@ -70,12 +70,18 @@ export default {
 
 <style>
 
-.btn, .nav-pills .nav-link, .card, .card-header, .form-control, .input-group-text, .badge {
+.btn, .nav-pills .nav-link, .card, .card-header, .form-control,
+.input-group-text, .badge, .modal-content, .modal-header,
+.v-select, .vs__dropdown-toggle{
     border-radius: 0px !important;
 }
 
 .dg-title{
     font-size: 24px !important;
+}
+
+.w-200{
+    width: 200px !important;
 }
 
 .w-150{
@@ -89,7 +95,6 @@ export default {
 .swal2-icon.swal2-warning::before{
     display: none;
 }
-
 .user-image-list {
     width: 60px !important;
     height: 60px !important;
@@ -98,5 +103,15 @@ export default {
     border: 1px solid #d5d5d5;
     width: 100%;
     height: 80px;
+}
+.v-select, .vs__dropdown-toggle{
+    height: 38px;
+}
+.vs__selected{
+    background-color: #007bff !important;
+    color: #fff !important;
+}
+.highlight .v-select, .highlight  .vs__dropdown-toggle{
+    border-color: #007bff !important;
 }
 </style>

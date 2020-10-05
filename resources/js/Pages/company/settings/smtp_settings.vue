@@ -1,7 +1,7 @@
 <template>
     <index :title="__('l.Settings')" :pn="__('l.Settings')" :pl="route('settings.general_settings')" :current="__('l.Roles & Permissions')">
         <div class="card card-primary">
-            <div class="card-header">{{__("l.SMTP Settings")}}</div>
+            <div class="modal-header bg-primary">{{__("l.SMTP Settings")}}</div>
             <div class="card-body">
                 <form id="smtp_settings_save" v-on:submit.prevent="smtp_settings_save">
                     <div class="form-group">

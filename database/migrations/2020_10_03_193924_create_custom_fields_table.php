@@ -15,10 +15,14 @@ class CreateCustomFieldsTable extends Migration
     {
         Schema::create('custom_fields', function (Blueprint $table) {
             $table->id();
+            $table->integer("order")->default(0);
+            $table->string("model");
+            $table->integer("group_id")->nullable();
             $table->string("name");
-            $table->string("placeholder")->nullable();
             $table->string("type");
             $table->text("options")->nullable();
+            $table->integer("width")->default(12);
+            $table->string("placeholder")->nullable();
             $table->boolean("required")->default(false);
             $table->timestamps();
         });

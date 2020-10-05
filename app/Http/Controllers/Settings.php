@@ -328,8 +328,40 @@ class Settings extends BaseController
     // Custom Fields
 
     public function custom_fields(){
-        $custom_fields  = CustomField::orderby("created_at", "desc")->get();
-        return Inertia::render("company/settings/custom_fields", compact("custom_fields"));
+        $custom_fields      = CustomField::with("group")->orderby("order", "asc")->get();
+        $contact_groups     = ContactGroup::orderby("created_at", "desc")->get();
+        return Inertia::render("company/settings/custom_fields/index", compact("custom_fields", "contact_groups"));
+    }
+
+    public function custom_fields_save(Request $request){
+        if($request->id){
+            $custom_field = CustomField::find($request->id);
+            if(!$custom_field)
+                return back();
+        }else{
+            $custom_field = new CustomField;
+        }
+        $custom_field->model = $request->model;
+        $custom_field->group_id = $request->group_id;
+        $custom_field->name = $request->name;
+        $custom_field->order = $request->order;
+        $custom_field->type = $request->type;
+        $custom_field->options = $request->options;
+        $custom_field->placeholder = $request->placeholder;
+        $custom_field->width = $request->width;
+        $custom_field->required = ($request->required) ? true : false;
+        $custom_field->save();
+
+        return back()->with("success", __("l.Data Saved Successfully"));
+    }
+
+    public function custom_fields_delete($id = null){
+        $custom_field = CustomField::find($id);
+        if(!$custom_field)
+            return back();
+
+        $custom_field->delete();
+        return back()->with("success", __("l.Data Deleted Successfully"));
     }
 
 

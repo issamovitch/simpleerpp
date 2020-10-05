@@ -65,7 +65,7 @@ const options = {
 Vue.use(VueHtmlToPaper, options);
 
 // JQuery
-$(document).on("shown.bs.modal", ".modal", function () {
+$(document).on("shown.bs.modal", ".modal:not(.view)", function () {
     $('input:first', this). trigger('focus')
 })
 

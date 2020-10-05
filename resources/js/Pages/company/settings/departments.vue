@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="departments_save" class="modal fade departments_save" id="add_department">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header"><h4 class="modal-title">{{ __("l.Add Department") }}</h4>
+                            <div class="modal-header bg-primary"><h4 class="modal-title">{{ __("l.Add Department") }}</h4>
                                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                             </div>
                             <div class="modal-body">
@@ -65,7 +65,7 @@
                 <div class="modal" :id="'show_modal'+department.id" v-for="department in departments">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h4 class="modal-title">{{__("l.Department Details")}}</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
@@ -93,7 +93,7 @@
                 <form v-for="department in departments" v-on:submit.prevent="departments_update" class="modal fade" :id="'edit_modal'+department.id">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h5 class="modal-title">{{ __("l.Edit Department") }}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>

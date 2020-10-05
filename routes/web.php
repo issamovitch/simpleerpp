@@ -115,9 +115,8 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get("contact_groups_delete/{id?}", "Settings@contact_groups_delete")->name("contact_groups_delete");
             // Custom fields
             Route::get("custom_fields", "Settings@custom_fields")->name("custom_fields");
-            Route::post("add_field", "Settings@add_field")->name("add_field");
-            Route::post("update_field", "Settings@update_field")->name("update_field");
-            Route::get("delete_field/{id?}", "Settings@delete_field")->name("delete_field");
+            Route::post("custom_fields_save", "Settings@custom_fields_save")->name("custom_fields_save");
+            Route::get("custom_fields_delete/{id?}", "Settings@custom_fields_delete")->name("custom_fields_delete");
         });
 
     });

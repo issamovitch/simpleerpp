@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="designations_save" class="modal fade designations_save" id="add_designation">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header"><h4 class="modal-title">{{ __("l.Add Designation") }}</h4>
+                            <div class="modal-header bg-primary"><h4 class="modal-title">{{ __("l.Add Designation") }}</h4>
                                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                             </div>
                             <div class="modal-body">
@@ -47,8 +47,8 @@
                         <div v-on:submit.prevent="designations_update(designation.id)" class="modal fade" :id="'designations_update'+designation.id">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{ __("l.Edit designation")}}</h4>
+                                    <div class="modal-header bg-primary">
+                                        <h4 class="modal-title">{{ __("l.Edit Designation")}}</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

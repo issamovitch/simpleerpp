@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="contact_groups_save" class="modal fade save_contact_group" id="add_contact_group">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h5 class="modal-title">{{__("l.Add Contact Group")}}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -47,7 +47,7 @@
                 <form v-for="contact_group in contact_groups" v-on:submit.prevent="contact_groups_update(contact_group.id)" class="modal fade" :id="'contact_groups_update'+contact_group.id">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary">
                                 <h5 class="modal-title">{{__("l.Edit Client Group")}}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
