@@ -77,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="row">
                                 <div class="col-sm-2"><label>{{__("l.Address")}}</label></div>
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label>{{__("l.Notes")}}</label>
@@ -143,7 +143,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-4 mt-5">
+                    <view-custom-fields :custom_fields="custom_fields" model="Client"></view-custom-fields>
+                    <div class="row mb-4 mt-4">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary w-150"><i class="fa fa-save"></i>
@@ -209,8 +210,13 @@
 <script>
 
 import company from "../layout/company"
+import ViewCustomFields from "../settings/custom_fields/view"
 
 export default {
+    components:{
+        company,
+        ViewCustomFields
+    },
     data() {
         return {
             type : 1,
@@ -218,10 +224,7 @@ export default {
             btn_disabled : false
         }
     },
-    props : ["sectors", "sectors_values", "companies", "client_groups", "countries"],
-    components:{
-        company
-    },
+    props : ["sectors", "sectors_values", "companies", "client_groups", "countries", "custom_fields"],
     methods: {
         previewFiles(e) {
             let file = e.target.files[0];

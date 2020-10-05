@@ -8,7 +8,6 @@
                 </div>
             </div>
             <div class="card-body">
-
                 <div class="client-details">
                     <div class="row">
                         <div class="col-sm-9">
@@ -18,7 +17,7 @@
                                 <span v-else>{{__("l.Company")}}</span>
                             </div>
                             <div class="form-group mb-0" v-if="client.type == 0">
-                                <label v-if="client.company"><span>{{__("l.Company")}}</span></label> : {{$client.company.name}}
+                                <label v-if="client.company"><span>{{__("l.Company")}}</span></label> : {{(client.company)?client.company.name:''}}
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
@@ -28,12 +27,12 @@
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label><span>{{__("l.Sector")}}</span></label> : {{client.sector.name}}
+                                        <label><span>{{__("l.Sector")}}</span></label> : {{(client.sector)?client.sector.name:''}}
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label><span>{{__("l.Client Group")}}</span></label> : {{client.group.name}}
+                                        <label><span>{{__("l.Client Group")}}</span></label> : {{(client.group)?client.group.name:''}}
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +44,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row">
@@ -62,7 +60,7 @@
                                     <div><label>{{__("l.Postal Code")}}</label> : {{client.postal_code}}</div>
                                 </div>
                             </div>
-                            <div class="row mt-2">
+                            <div class="row mt-2" v-if="client.tva_num">
                                 <div class="col-sm-2"><label>{{__("l.N° TVA")}}</label></div>
                                 <div class="col-sm-10">{{client.tva_num}}</div>
                             </div>
@@ -83,10 +81,12 @@
                         </div>
                     </div>
                 </div>
-
                 <ul class="nav nav-tabs nav-pills mt-4" id="myTab" role="tablist">
+                    <li class="nav-item" v-if="custom_fields && custom_fields.length>0">
+                        <a class="nav-link active" data-toggle="tab" href="#tab0" role="tab" aria-controls="home" aria-selected="true">{{__("l.Custom Fields")}}</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">{{__("l.Contacts & Adresses")}}</a>
+                        <a :class="(!custom_fields || custom_fields.length==0) ?'active' :''" class="nav-link" data-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">{{__("l.Contacts & Adresses")}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">{{__("l.Projects")}}</a>
@@ -107,9 +107,11 @@
                         <a class="nav-link" data-toggle="tab" href="#tab7" role="tab" aria-controls="contact" aria-selected="false">{{__("l.Events")}}</a>
                     </li>
                 </ul>
-
                 <div class="tab-content" id="myTabContent" style="min-height: 300px;">
-                    <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="home-tab">...</div>
+                    <div v-if="custom_fields && custom_fields.length>0" class="tab-pane fade show active pt-3" id="tab0" role="tabpanel" aria-labelledby="home-tab">
+                        <print-custom-fields :custom_fields="custom_fields"></print-custom-fields>
+                    </div>
+                    <div :class="(!custom_fields || custom_fields.length==0) ?'active fade show' :''" class="tab-pane" id="tab1" role="tabpanel" aria-labelledby="home-tab">...</div>
                     <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="profile-tab">...</div>
                     <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="contact-tab">...</div>
                     <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="contact-tab">...</div>
@@ -117,7 +119,6 @@
                     <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="contact-tab">...</div>
                     <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="contact-tab">...</div>
                 </div>
-
             </div>
         </div>
     </company>
@@ -126,11 +127,13 @@
 <script>
 
 import company from "../layout/company"
+import PrintCustomFields from "../settings/custom_fields/print"
 
 export default {
-    props : ["client", "sectors", "companies", "client_groups"],
+    props : ["client", "sectors", "companies", "client_groups", "custom_fields"],
     components:{
-        company
+        company,
+        PrintCustomFields
     }
 }
 

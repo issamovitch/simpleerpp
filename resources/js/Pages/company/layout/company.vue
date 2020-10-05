@@ -104,14 +104,4 @@ export default {
     width: 100%;
     height: 80px;
 }
-.v-select, .vs__dropdown-toggle{
-    height: 38px;
-}
-.vs__selected{
-    background-color: #007bff !important;
-    color: #fff !important;
-}
-.highlight .v-select, .highlight  .vs__dropdown-toggle{
-    border-color: #007bff !important;
-}
 </style>

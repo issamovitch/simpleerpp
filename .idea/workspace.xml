@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields/view.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CustomValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_05_153805_create_custom_values_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields/print.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Clients.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CustomField.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CustomField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_03_193924_create_custom_fields_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_03_193924_create_custom_fields_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/clients/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/clients/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/clients/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/clients/view.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/company.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/client_groups.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/client_groups.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/contact_groups.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/contact_groups.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/departments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/departments.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/designations.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/designations.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/roles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/roles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/sectors.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/sectors.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/smtp_settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/smtp_settings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/l.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/l.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields/view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/custom_fields/view.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +235,7 @@
       <workItem from="1601744738805" duration="9995000" />
       <workItem from="1601804892104" duration="4056000" />
       <workItem from="1601887179525" duration="4767000" />
-      <workItem from="1601893211569" duration="16898000" />
+      <workItem from="1601893211569" duration="23059000" />
     </task>
     <task id="LOCAL-00001" summary="Users">
       <created>1601502916805</created>
@@ -281,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601754090866</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Custom Fields">
+      <created>1601910884365</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601910884365</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,29 +291,34 @@
     <MESSAGE value="Clients" />
     <MESSAGE value="Mailbox" />
     <MESSAGE value="Contact Groups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact Groups" />
+    <MESSAGE value="Custom Fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Fields" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601312510276">
+    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601911010346">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1601312510276" />
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601754090134">
+    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1601911010346" />
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1601910883214">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601754090134" />
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1601910883214" />
     <state x="466" y="131" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601888913680">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="466" y="131" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.693@0.27.1366.693" timestamp="1601888913680" />
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601751860497">
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601910923656">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601751860497" />
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601910923656" />
     <state x="347" y="162" key="run.anything.popup" timestamp="1601573016426">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1601573016426" />
+    <state x="346" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1601915577351">
+      <screen x="0" y="27" width="1366" height="693" />
+    </state>
+    <state x="346" y="41" width="672" height="678" key="search.everywhere.popup/0.27.1366.693@0.27.1366.693" timestamp="1601915577351" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomField;
+use App\Models\CustomValue;
 use App\Models\Sector;
 use App\Models\Client;
 use App\Models\ClientGroup;
@@ -33,13 +35,15 @@ class Clients extends BaseController
         $sectors        = Sector::orderby("created_at", "desc")->get();
         $companies      = Client::where("type" , 1)->orderby("created_at", "desc")->get();
         $client_groups  = ClientGroup::orderby("created_at", "desc")->get();
+        $custom_fields  = CustomField::where("model", "Client")->orderby("order", "asc")->get();
 
         return Inertia::render("company/clients/add", [
             "sectors_values" => sectors(),
             "sectors" => $sectors,
             "companies" => $companies,
             "client_groups" => $client_groups,
-            "countries" => Lang::get("countries")
+            "countries" => Lang::get("countries"),
+            "custom_fields" => $custom_fields
         ]);
     }
 
@@ -108,6 +112,17 @@ class Clients extends BaseController
 
         $client->save();
 
+        foreach ($request->all() as $k => $v){
+            if (strpos($k, "field_") !== false) {
+                $id                         = str_replace("field_", "", $k);
+                $custom_value               = new CustomValue;
+                $custom_value->field_id     = $id;
+                $custom_value->client_id    = $client->id;
+                $custom_value->value        = (is_array($v)) ? implode(",", $v) : $v;
+                $custom_value->save();
+            }
+        }
+
         return redirect()->route("clients.index")->with("success", __("l.Data Added Successfully"));
     }
 
@@ -119,14 +134,20 @@ class Clients extends BaseController
         $sectors        = Sector::orderby("created_at", "desc")->get();
         $companies      = Client::where("type" , 1)->where("id", "!=", $id)->orderby("created_at", "desc")->get();
         $client_groups  = ClientGroup::orderby("created_at", "desc")->get();
-
+        $custom_fields  = CustomField::where("model", "Client")->orderby("order", "asc")->get();
+        foreach ($custom_fields as $custom_field){
+            $custom_value = CustomValue::where(["field_id" => $custom_field->id, "client_id" => $client->id])->first();
+            $value = @$custom_value->value;
+            $custom_field->value = $value;
+        }
         return Inertia::render("company/clients/edit", [
             "client" => $client,
             "sectors_values" => sectors(),
             "sectors" => $sectors,
             "companies" => $companies,
             "client_groups" => $client_groups,
-            "countries" => Lang::get("countries")
+            "countries" => Lang::get("countries"),
+            "custom_fields" => $custom_fields
         ]);
     }
 
@@ -165,9 +186,20 @@ class Clients extends BaseController
 
         $client->save();
 
+        CustomValue::where("client_id", $client->id)->delete();
+        foreach ($request->all() as $k => $v){
+            if (strpos($k, "field_") !== false) {
+                $id                         = str_replace("field_", "", $k);
+                $custom_value               = new CustomValue;
+                $custom_value->field_id     = $id;
+                $custom_value->client_id    = $client->id;
+                $custom_value->value        = (is_array($v)) ? implode(",", $v) : $v;
+                $custom_value->save();
+            }
+        }
+
         return redirect()->route("clients.index")->with("success", __("l.Data Updated Successfully"));
     }
-
 
     public function delete($id = null){
         $client = Client::find($id);
@@ -178,6 +210,7 @@ class Clients extends BaseController
             unlink(storage_path("app/". $client->image));
 
         $client->delete();
+        CustomValue::where("client_id", $client->id)->delete();
 
         return back()->with("success", __("l.Data Deleted Successfully"));
     }
@@ -190,12 +223,19 @@ class Clients extends BaseController
         $sectors        = Sector::orderby("created_at", "desc")->get();
         $companies      = Client::where("type" , 1)->where("id", "!=", $id)->orderby("created_at", "desc")->get();
         $client_groups  = ClientGroup::orderby("created_at", "desc")->get();
+        $custom_fields  = CustomField::where("model", "Client")->orderby("order", "asc")->get();
+        foreach ($custom_fields as $custom_field){
+            $custom_value = CustomValue::where(["field_id" => $custom_field->id, "client_id" => $client->id])->first();
+            $value = @$custom_value->value;
+            $custom_field->value = $value;
+        }
 
         return Inertia::render("company/clients/view", [
             "client" => $client,
             "sectors" => $sectors,
             "companies" => $companies,
             "client_groups" => $client_groups,
+            "custom_fields" => $custom_fields
         ]);
     }
 

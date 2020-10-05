@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClientGroup;
 use App\Models\ContactGroup;
 use App\Models\CustomField;
+use App\Models\CustomValue;
 use App\Models\Sector;
 use App\Models\User;
 use App\Models\Department;
@@ -335,21 +336,21 @@ class Settings extends BaseController
 
     public function custom_fields_save(Request $request){
         if($request->id){
-            $custom_field = CustomField::find($request->id);
+            $custom_field           = CustomField::find($request->id);
             if(!$custom_field)
                 return back();
         }else{
-            $custom_field = new CustomField;
+            $custom_field           = new CustomField;
         }
-        $custom_field->model = $request->model;
-        $custom_field->group_id = $request->group_id;
-        $custom_field->name = $request->name;
-        $custom_field->order = $request->order;
-        $custom_field->type = $request->type;
-        $custom_field->options = $request->options;
-        $custom_field->placeholder = $request->placeholder;
-        $custom_field->width = $request->width;
-        $custom_field->required = ($request->required) ? true : false;
+        $custom_field->model        = $request->model;
+        $custom_field->group_id     = $request->group_id;
+        $custom_field->name         = $request->name;
+        $custom_field->order        = $request->order;
+        $custom_field->type         = $request->type;
+        $custom_field->options      = $request->options;
+        $custom_field->placeholder  = $request->placeholder;
+        $custom_field->width        = $request->width;
+        $custom_field->required     = ($request->required) ? true : false;
         $custom_field->save();
 
         return back()->with("success", __("l.Data Saved Successfully"));
@@ -361,6 +362,8 @@ class Settings extends BaseController
             return back();
 
         $custom_field->delete();
+        CustomValue::where("field_id", $id)->delete();
+
         return back()->with("success", __("l.Data Deleted Successfully"));
     }
 
