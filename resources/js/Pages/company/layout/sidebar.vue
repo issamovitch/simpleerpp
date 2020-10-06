@@ -35,39 +35,16 @@
                         </Inertia-link>
                     </li>
                     <li class="nav-item">
+                        <Inertia-link :href="route('contacts.index')" class="nav-link" v-bind:class="{'active': current_route('contacts.*')}">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>{{__("l.Contacts")}}</p>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
                         <Inertia-link :href="route('settings.index')" class="nav-link" v-bind:class="{'active': current_route('settings.*')}">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>{{ __("l.Settings") }}</p>
                         </Inertia-link>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>
-                                Dashboard
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="../../index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index2.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="../../index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                 </ul>
             </nav>

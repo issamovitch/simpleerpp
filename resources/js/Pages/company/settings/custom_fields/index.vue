@@ -24,13 +24,6 @@
                                         <option value="Contact">{{__("l.Contact")}}</option>
                                     </select>
                                 </div>
-                                <div class="form-group" v-if="field.model=='Contact'">
-                                    <label><span>{{__("l.Contact Group")}}</span></label>
-                                    <select v-model="field.group_id" class="form-control" name="group_id">
-                                        <option value="">{{__("l.All Groups")}}</option>
-                                        <option v-for="group in contact_groups" :value="group.id">{{group.name}}</option>
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label><span>{{__("l.Name")}}</span> <span class="text-danger">*</span></label>
                                     <input v-model="field.name" type="text" class="form-control" name="name" required autocomplete="off" :placeholder="__('l.Name')">
@@ -116,16 +109,7 @@
                     <tr v-show="type=='All'||field.model==type" v-for="(field, i) in custom_fields">
                         <td class="text-center">{{i+1}}</td>
                         <td>
-                            <a data-toggle="modal" href="" @click="highlight_field_id=field.id" :data-target="'#custom_fields_'+field.model">
-                                <div>{{__('l.'+field.model)}}</div>
-                                <small v-if="field.model=='Contact'">
-                                        <span v-if="field.group_id">
-                                            <span v-if="field.group">{{field.group.name}}</span>
-                                            <span v-else><span class="text-danger">{{__("l.Error")}}</span></span>
-                                        </span>
-                                    <span v-else><span>{{__("l.All Groups")}}</span></span>
-                                </small>
-                            </a>
+                            <a data-toggle="modal" href="" @click="highlight_field_id=field.id" :data-target="'#custom_fields_'+field.model"><div>{{__('l.'+field.model)}}</div></a>
                         </td>
                         <td>{{field.name}}</td>
                         <td>
@@ -185,7 +169,7 @@ export default {
         Multiselect,
         ViewCustomFields
     },
-    props: ["custom_fields", "contact_groups"],
+    props: ["custom_fields"],
     data() {
         return {
             highlight_field_id: null,
@@ -193,7 +177,7 @@ export default {
             type: "All",
             action: "add",
             field: Object,
-            empty_field: {model: "", group_id: "" , name: "", order: 0, placeholder:"", type: "", options: [], required:false, width: "12"},
+            empty_field: {model: "", name: "", order: 0, placeholder:"", type: "", options: [], required:false, width: "12"},
         }
     },
     mounted(){
@@ -206,9 +190,7 @@ export default {
         },
         edit_modal(field){
             this.action = 'edit'
-            this.field = field
-            this.field.group_id = (field.group_id && field.group_id!="") ? field.group_id : ""
-        },
+            this.field = field},
         addTag (newTag) {
             this.field.options.push(newTag)
         },

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomValuesTable extends Migration
+class AddContactIdToCustomValues extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateCustomValuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('custom_values', function (Blueprint $table) {
-            $table->id();
-            $table->integer("field_id");
-            $table->integer("client_id")->nullable();
-            $table->text("value")->nullable();
-            $table->timestamps();
+        Schema::table('custom_values', function (Blueprint $table) {
+            $table->integer("contact_id")->after("client_id")->nullable();
         });
     }
 
@@ -29,6 +25,8 @@ class CreateCustomValuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('custom_values');
+        Schema::table('custom_values', function (Blueprint $table) {
+            //
+        });
     }
 }

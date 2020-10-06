@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="row mt-2" v-if="client.tva_num">
-                                <div class="col-sm-2"><label>{{__("l.N° TVA")}}</label></div>
+                                <div class="col-sm-2"><label>{{__("l.N° TVA")}} : </label></div>
                                 <div class="col-sm-10">{{client.tva_num}}</div>
                             </div>
                         </div>

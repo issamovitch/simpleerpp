@@ -75,6 +75,17 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::post('search', "Mailbox@search")->name("search");
         });
 
+        // Contacts
+        Route::group(["as" => "contacts.","prefix" => "contacts"], function () {
+            Route::get('index', "Contacts@index")->name("index");
+            Route::get('add', "Contacts@add")->name("add");
+            Route::post('save', "Contacts@save")->name("save");
+            Route::get('edit/{id?}', "Contacts@edit")->name("edit");
+            Route::post('update', "Contacts@update")->name("update");
+            Route::get('delete/{id?}', "Contacts@delete")->name("delete");
+            Route::get('view/{id?}', "Contacts@view")->name("view");
+        });
+
         // Settings
         Route::group(["prefix" => "settings", "as" => "settings."], function (){
             // General Settings

@@ -17,7 +17,6 @@ class CreateCustomFieldsTable extends Migration
             $table->id();
             $table->integer("order")->default(0);
             $table->string("model");
-            $table->integer("group_id")->nullable();
             $table->string("name");
             $table->string("type");
             $table->text("options")->nullable();

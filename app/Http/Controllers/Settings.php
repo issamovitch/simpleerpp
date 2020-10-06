@@ -343,7 +343,6 @@ class Settings extends BaseController
             $custom_field           = new CustomField;
         }
         $custom_field->model        = $request->model;
-        $custom_field->group_id     = $request->group_id;
         $custom_field->name         = $request->name;
         $custom_field->order        = $request->order;
         $custom_field->type         = $request->type;
