@@ -4,7 +4,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(["namespace" => "App\Http\Controllers"], function(){
 
+    // Index
     Route::get("/", "BaseController@index")->name('index');
+
+    // Front Routes
+    Route::group(["namespace" => "Front"], function(){
+        // Knowledge Base
+        Route::group(["as" => "knowledge-base.","prefix" => "knowledge-base"], function () {
+            Route::get('', "KnowledgeBase@index")->name("index");
+            Route::get('group/{group_id?}', "KnowledgeBase@group")->name("group");
+            Route::get('article/{slug?}', "KnowledgeBase@article")->name("article");
+            Route::post('search', "KnowledgeBase@search")->name("search");
+        });
+    });
+
     // Auth
     Route::get('login', 'BaseController@index')->name('login');
     Route::post('login', 'Auth\LoginController@login')->name('login');
@@ -86,6 +99,18 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get('view/{id?}', "Contacts@view")->name("view");
         });
 
+        // Knowledge Base
+        Route::group(["as" => "knowledge_base.","prefix" => "knowledge_base"], function () {
+            Route::get('index/{group_id?}', "KnowledgeBase@index")->name("index");
+            Route::get('add', "KnowledgeBase@add")->name("add");
+            Route::post('save', "KnowledgeBase@save")->name("save");
+            Route::post('group_save', "KnowledgeBase@group_save")->name("group_save");
+            Route::get('edit/{id?}', "KnowledgeBase@edit")->name("edit");
+            Route::post('update', "KnowledgeBase@update")->name("update");
+            Route::get('delete/{id?}', "KnowledgeBase@delete")->name("delete");
+            Route::post('filter', "KnowledgeBase@filter")->name("filter");
+        });
+
         // Settings
         Route::group(["prefix" => "settings", "as" => "settings."], function (){
             // General Settings
@@ -128,6 +153,10 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get("custom_fields", "Settings@custom_fields")->name("custom_fields");
             Route::post("custom_fields_save", "Settings@custom_fields_save")->name("custom_fields_save");
             Route::get("custom_fields_delete/{id?}", "Settings@custom_fields_delete")->name("custom_fields_delete");
+            // Knowledge Base Groups
+            Route::get("knowledge_base_groups", "Settings@knowledge_base_groups")->name("knowledge_base_groups");
+            Route::post("knowledge_base_groups_save", "Settings@knowledge_base_groups_save")->name("knowledge_base_groups_save");
+            Route::get("knowledge_base_groups_delete/{id?}", "Settings@knowledge_base_groups_delete")->name("knowledge_base_groups_delete");
         });
 
     });

@@ -34,6 +34,9 @@
                             <Inertia-link :href="route('settings.custom_fields')" v-bind:class="{'active' : current_route()=='settings.custom_fields'}" class="nav-link">
                                 {{ __("l.Custom Fields") }}
                             </Inertia-link>
+                            <Inertia-link :href="route('settings.knowledge_base_groups')" v-bind:class="{'active' : current_route()=='settings.knowledge_base_groups'}" class="nav-link">
+                                {{ __("l.Knowledge Base Groups") }}
+                            </Inertia-link>
                         </div>
                     </div>
                     <div class="col-sm-10">

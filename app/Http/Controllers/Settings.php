@@ -6,6 +6,8 @@ use App\Models\ClientGroup;
 use App\Models\ContactGroup;
 use App\Models\CustomField;
 use App\Models\CustomValue;
+use App\Models\KBArticle;
+use App\Models\KBGroup;
 use App\Models\Sector;
 use App\Models\User;
 use App\Models\Department;
@@ -355,6 +357,8 @@ class Settings extends BaseController
         return back()->with("success", __("l.Data Saved Successfully"));
     }
 
+    // Knowledge Base Groups
+
     public function custom_fields_delete($id = null){
         $custom_field = CustomField::find($id);
         if(!$custom_field)
@@ -362,6 +366,40 @@ class Settings extends BaseController
 
         $custom_field->delete();
         CustomValue::where("field_id", $id)->delete();
+
+        return back()->with("success", __("l.Data Deleted Successfully"));
+    }
+
+    public function knowledge_base_groups(){
+        $groups = KBGroup::withCount("articles")->orderby("order", "asc")->get();
+        return Inertia::render("company/settings/knowledge_base_groups", compact("groups"));
+    }
+
+    public function knowledge_base_groups_save(Request $request){
+        if($request->id){
+            $group          = KBGroup::find($request->id);
+            if(!$group)
+                return back();
+        }else{
+            $group          = new KBGroup;
+        }
+
+        $group->name        = $request->name;
+        $group->description = $request->description;
+        $group->order       = $request->order;
+        $group->draft       = $request->draft;
+        $group->save();
+
+        return back()->with("success", __("l.Data Saved Successfully"));
+    }
+
+    public function knowledge_base_groups_delete($id = null){
+        $group          = KBGroup::find($id);
+        if(!$group)
+            return back();
+
+        KBArticle::where("group_id", $group->id)->delete();
+        $group->delete();
 
         return back()->with("success", __("l.Data Deleted Successfully"));
     }

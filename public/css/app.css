@@ -78,6 +78,18 @@
 .highlight .form-control[data-v-a2635064]{
     border-color: #007bff !important;
 }
+
+.dropdown-toggle[data-v-702df150]::after{
+    display: none;
+}
+#dropdownMenuButton[data-v-702df150]{
+    width: 300px;
+    border: 1px solid #eee;
+    padding: 10px;
+    position: absolute;
+    left: -33px;
+    background: #fff;
+}
 /**
  * Trumbowyg v2.21.0 - A lightweight WYSIWYG editor
  * Default stylesheet for Trumbowyg editor
@@ -852,6 +864,81 @@ input[type=file][data-v-4958f4be] {
     display: block;
     margin: 0px auto 10px;
     border-radius: 50%;
+}
+
+.list[data-v-3749cdf0]{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.main-footer[data-v-3749cdf0] {
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+    color: #6a6d71;
+    padding: 1rem;
+    margin: 0px !important;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+}
+.wrapper[data-v-3749cdf0]{
+    background: #f8f8f8;
+    min-height: 80vh;
+}
+.form-control.search[data-v-3749cdf0]{
+    width: 400px;
+    height: 50px;
+    font-size: 17px;
+}
+.search-btn[data-v-3749cdf0]{
+    height: 50px;
+    font-size: 17px;
+}
+.wrapper .container[data-v-3749cdf0]{
+    padding-bottom: 200px;
+}
+
+.list[data-v-2917f164]{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.fa-folder[data-v-2917f164]{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+p[data-v-2917f164]{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.list[data-v-62870d08]{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.fa-folder[data-v-62870d08]{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+p[data-v-62870d08]{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.list[data-v-00d52091]{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.fa-folder[data-v-00d52091]{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+p[data-v-00d52091]{
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com

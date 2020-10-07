@@ -41,6 +41,12 @@
                         </Inertia-link>
                     </li>
                     <li class="nav-item">
+                        <Inertia-link :href="route('knowledge_base.index')" class="nav-link" v-bind:class="{'active': current_route('knowledge_base.*')}">
+                            <i class="nav-icon far fa-folder"></i>
+                            <p>{{__("l.Knowledge Base")}}</p>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
                         <Inertia-link :href="route('settings.index')" class="nav-link" v-bind:class="{'active': current_route('settings.*')}">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>{{ __("l.Settings") }}</p>

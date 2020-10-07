@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\KBGroup;
+use App\Models\KBArticle;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        KBGroup::truncate();
+        KBArticle::truncate();
+        KBGroup::factory()->times(7)->hasArticles(7)->create();
     }
 }
