@@ -111,6 +111,19 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::post('filter', "KnowledgeBase@filter")->name("filter");
         });
 
+        // Mailing Lists
+        Route::group(["as" => "mailing_lists.","prefix" => "mailing_lists"], function () {
+            Route::get('index', "MailingLists@index")->name("index");
+            Route::post('save', "MailingLists@save")->name("save");
+            Route::get('delete_field/{id?}', "MailingLists@delete_field")->name("delete_field");
+            Route::post('update', "MailingLists@update")->name("update");
+            Route::get('delete/{id?}', "MailingLists@delete")->name("delete");
+            Route::get('view/{id?}', "MailingLists@view")->name("view");
+            Route::post('save_email', "MailingLists@save_email")->name("save_email");
+            Route::post('update_email', "MailingLists@update_email")->name("update_email");
+            Route::get('delete_email/{id?}', "MailingLists@delete_email")->name("delete_email");
+        });
+
         // Settings
         Route::group(["prefix" => "settings", "as" => "settings."], function (){
             // General Settings

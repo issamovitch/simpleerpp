@@ -340,4 +340,12 @@ return array (
   'Related Articles' => 'Related Articles',
   'Search Results' => 'Search Results',
   'No Results Found' => 'No Results Found',
+  'Mailing Lists' => 'Mailing Lists',
+  'Add Mailing List' => 'Add Mailing List',
+  'Edit Mailing List' => 'Edit Mailing List',
+  'Enter Field Name' => 'Enter Field Name',
+  'Emails' => 'Emails',
+  'Mailing List' => 'Mailing List',
+  'Add Email' => 'Add Email',
+  'Edit Email' => 'Edit Email',
 );

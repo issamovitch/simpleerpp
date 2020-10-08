@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="Contacts">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Front/KnowledgeBase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/KnowledgeBase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/KBArticle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/KBGroup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/KBArticleFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/KBGroupFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_06_104920_create_k_b_groups_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_06_131032_create_k_b_articles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base/add.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base/edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base/row.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/knowledge_base_groups.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base/article.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base/group.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base/layout.vue" afterDir="false" />
+    <list default="true" id="4999f8ff-008c-40cf-a103-0ab6a4186b26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MailingLists.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailingList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailingListEmail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailingListEmailValue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MailingListField.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_112518_create_mailing_lists_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_07_112530_create_mailing_list_fields_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_100652_create_mailing_list_emails_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_08_100703_create_mailing_list_email_values_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailing_lists/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/company/mailing_lists/view.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/common/pagination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/common/pagination.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/layout/sidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/company/settings/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/company/settings/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/l.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/l.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -204,25 +192,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/company/mailing_lists" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/mailing_lists" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/contacts" />
+      <recent name="$PROJECT_DIR$/resources/js/Pages/company/settings" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/front" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company/settings/index" />
       <recent name="$PROJECT_DIR$/resources/js/Pages" />
       <recent name="$PROJECT_DIR$/resources/js/Pages/company" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/js/Pages/front/knowledge_base" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages/company/knowledge_base" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages/company/contacts" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages/company/settings" />
-      <recent name="$PROJECT_DIR$/resources/js/Pages/company/mailbox" />
     </key>
   </component>
   <component name="RunManager">
@@ -252,7 +240,8 @@
       <workItem from="1601887179525" duration="4767000" />
       <workItem from="1601893211569" duration="25896000" />
       <workItem from="1601974943170" duration="36726000" />
-      <workItem from="1602063616372" duration="2289000" />
+      <workItem from="1602063616372" duration="7848000" />
+      <workItem from="1602146589153" duration="8918000" />
     </task>
     <task id="LOCAL-00001" summary="Users">
       <created>1601502916805</created>
@@ -310,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601978222050</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Knowledge Base">
+      <created>1602066039423</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602066039423</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +321,8 @@
     <MESSAGE value="Custom Fields" />
     <MESSAGE value="Client Custom Fields" />
     <MESSAGE value="Contacts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contacts" />
+    <MESSAGE value="Knowledge Base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Knowledge Base" />
   </component>
   <component name="WindowStateProjectService">
     <state x="355" y="175" width="645" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602009318205">
@@ -336,26 +333,26 @@
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="470" y="68" width="406" height="625" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.693@0.27.1366.693" timestamp="1602009081791" />
-    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602012248926">
+    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602070107424">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1602012248926" />
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1602007597106">
+    <state x="416" y="131" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1366.693@0.27.1366.693" timestamp="1602070107424" />
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2" timestamp="1602066038215">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1602007597106" />
+    <state x="222" y="27" width="912" height="693" key="CommitChangelistDialog2/0.27.1366.693@0.27.1366.693" timestamp="1602066038215" />
     <state x="466" y="131" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601888913680">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
     <state x="466" y="131" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.693@0.27.1366.693" timestamp="1601888913680" />
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1601978231878">
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602066851114">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1601978231878" />
-    <state x="347" y="162" key="run.anything.popup" timestamp="1602009875770">
+    <state x="278" y="109" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1366.693@0.27.1366.693" timestamp="1602066851114" />
+    <state x="347" y="162" key="run.anything.popup" timestamp="1602150684844">
       <screen x="0" y="27" width="1366" height="693" />
     </state>
-    <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1602009875770" />
+    <state x="347" y="162" key="run.anything.popup/0.27.1366.693@0.27.1366.693" timestamp="1602150684844" />
     <state x="346" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1601915577351">
       <screen x="0" y="27" width="1366" height="693" />
     </state>

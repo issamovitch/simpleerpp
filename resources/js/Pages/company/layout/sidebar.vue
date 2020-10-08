@@ -47,6 +47,12 @@
                         </Inertia-link>
                     </li>
                     <li class="nav-item">
+                        <Inertia-link :href="route('mailing_lists.index')" class="nav-link" v-bind:class="{'active': current_route('mailing_lists.*')}">
+                            <i class="nav-icon fa fa-at"></i>
+                            <p>{{__("l.Mailing Lists")}}</p>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
                         <Inertia-link :href="route('settings.index')" class="nav-link" v-bind:class="{'active': current_route('settings.*')}">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>{{ __("l.Settings") }}</p>
