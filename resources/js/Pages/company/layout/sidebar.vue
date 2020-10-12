@@ -53,6 +53,12 @@
                         </Inertia-link>
                     </li>
                     <li class="nav-item">
+                        <Inertia-link :href="route('surveys.index')" class="nav-link" v-bind:class="{'active': current_route('surveys.*')}">
+                            <i class="nav-icon fa fa-poll-h"></i>
+                            <p>{{__("l.Surveys")}}</p>
+                        </Inertia-link>
+                    </li>
+                    <li class="nav-item">
                         <Inertia-link :href="route('settings.index')" class="nav-link" v-bind:class="{'active': current_route('settings.*')}">
                             <i class="nav-icon fas fa-cogs"></i>
                             <p>{{ __("l.Settings") }}</p>

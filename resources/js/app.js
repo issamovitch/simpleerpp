@@ -64,10 +64,22 @@ const options = {
 };
 Vue.use(VueHtmlToPaper, options);
 
+// ToggleButton
+import ToggleButton from 'vue-js-toggle-button'
+Vue.use(ToggleButton)
+
+// VeeValidate
+import VeeValidate from 'vee-validate';
+Vue.use(VeeValidate)
+import { Validator } from 'vee-validate';
+Validator.dictionary.container[lang].messages.required = Vue.prototype.__("l.This field is required")
 // JQuery
 $(document).on("shown.bs.modal", ".modal:not(.view)", function () {
     $('input:first', this). trigger('focus')
 })
+
+// Global Variables
+Vue.prototype.colors = ["primary", "secondary", "info", "success", "warning", "danger", "black", "gray-dark", "gray", "indigo", "lightblue", "navy", "purple", "fuchsia", "pink", "maroon", "orange", "lime", "teal", "olive"]
 
 // Initialize App
 const app = document.getElementById('app')

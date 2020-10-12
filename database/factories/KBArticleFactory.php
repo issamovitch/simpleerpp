@@ -23,7 +23,7 @@ class KBArticleFactory extends Factory
     public function definition()
     {
         return [
-            "order" => $this->faker->unique(true, 100000)->numberBetween(1,49),
+            "order" => $this->faker->unique(true, 100000)->numberBetween(1,1000),
             "subject" => $this->faker->sentence(3, true),
             "slug" => $this->faker->slug(),
             "draft" => $this->faker->boolean(50),

@@ -16,6 +16,11 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get('article/{slug?}', "KnowledgeBase@article")->name("article");
             Route::post('search', "KnowledgeBase@search")->name("search");
         });
+        // Survey
+        Route::group(["as" => "survey.","prefix" => "survey"], function () {
+            Route::get('{id?}', "Survey@survey")->name("survey");
+            Route::post('save_survey', "Survey@save_survey")->name("save_survey");
+        });
     });
 
     // Auth
@@ -124,6 +129,25 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get('delete_email/{id?}', "MailingLists@delete_email")->name("delete_email");
         });
 
+        // Surveys
+        Route::group(["as" => "surveys.","prefix" => "surveys"], function () {
+            Route::get('index', "Surveys@index")->name("index");
+            Route::get('add', "Surveys@add")->name("add");
+            Route::post('save', "Surveys@save")->name("save");
+            Route::get('edit/{id?}', "Surveys@edit")->name("edit");
+            Route::post('update', "Surveys@update")->name("update");
+            Route::get('delete/{id?}', "Surveys@delete")->name("delete");
+            Route::get('status/{id?}/{status?}', "Surveys@status")->name("status");
+            Route::get('details/{id?}', "Surveys@details")->name("details");
+            Route::post('save_question', "Surveys@save_question")->name("save_question");
+            Route::get('delete_question/{id?}', "Surveys@delete_question")->name("delete_question");
+            Route::post('update_question', "Surveys@update_question")->name("update_question");
+            Route::post('change_questions_order', "Surveys@change_questions_order")->name("change_questions_order");
+            Route::post('submit_campaign', "Surveys@submit_campaign")->name("submit_campaign");
+            Route::get('delete_campaign/{id?}', "Surveys@delete_campaign")->name("delete_campaign");
+            Route::get('send_email/{id?}', "Surveys@send_email")->name("send_email");
+        });
+
         // Settings
         Route::group(["prefix" => "settings", "as" => "settings."], function (){
             // General Settings
@@ -170,6 +194,9 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::get("knowledge_base_groups", "Settings@knowledge_base_groups")->name("knowledge_base_groups");
             Route::post("knowledge_base_groups_save", "Settings@knowledge_base_groups_save")->name("knowledge_base_groups_save");
             Route::get("knowledge_base_groups_delete/{id?}", "Settings@knowledge_base_groups_delete")->name("knowledge_base_groups_delete");
+            // Surveys
+            Route::get("surveys", "Settings@surveys")->name("surveys");
+            Route::post("surveys_save", "Settings@surveys_save")->name("surveys_save");
         });
 
     });

@@ -18,7 +18,7 @@ class MailingLists extends BaseController
     }
 
     public function index(){
-        $lists = MailingList::with("fields")->orderby("created_at", "desc")->get();
+        $lists = MailingList::with("fields")->withCount("emails")->orderby("created_at", "desc")->get();
 
         return Inertia::render("company/mailing_lists/index", compact("lists"));
     }

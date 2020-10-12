@@ -11,12 +11,12 @@ class MailingListEmail extends Model
 
     protected $appends = ["values"];
 
-    public function values_not_keyed(){
+    public function valuesNotKeyed(){
         return $this->hasMany("App\Models\MailingListEmailValue", "mailing_list_email_id");
     }
 
     public function getValuesAttribute(){
-        return $this->values_not_keyed->keyBy("mailing_list_field_id");
+        return $this->valuesNotKeyed->keyBy("mailing_list_field_id");
     }
 
 }

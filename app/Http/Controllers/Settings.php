@@ -404,5 +404,19 @@ class Settings extends BaseController
         return back()->with("success", __("l.Data Deleted Successfully"));
     }
 
+    // Surveys
+
+    public function surveys(){
+        $settings = Setting::all()->keyBy("key");
+        return Inertia::render("company/settings/surveys", ["settings" => $settings]);
+    }
+
+    public function surveys_save(Request $request)
+    {
+        foreach ($request->all() as $k => $v) {
+            $this->save_s($k, $v);
+        }
+        return back()->with("success", __("l.Data Saved Successfully"));
+    }
 
 }

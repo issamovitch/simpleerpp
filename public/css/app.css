@@ -758,6 +758,48 @@ input[type=file][data-v-4958f4be] {
     background-image : none !important;
 }
 
+aaa[data-v-1d9d3ad1]{
+}
+
+.short_description .trumbowyg-box{
+    min-height: inherit !important;
+}
+.short_description .trumbowyg-editor{
+    min-height: 100px !important;
+    height: 100px !important;
+}
+
+.question .card-header[data-v-be1762fe] {
+    cursor : move
+}
+#sortable[data-v-be1762fe]{
+    position: relative;
+}
+.delete-btn[data-v-be1762fe]{
+    top: 7px;
+    right: 10px;
+    position: absolute;
+}
+.delete-save[data-v-be1762fe]{
+    top: 7px;
+    right: 35px;
+    position: absolute;
+}
+label[data-v-be1762fe]{
+    font-weight: normal !important;
+}
+.campaign_emails[data-v-be1762fe]{
+    display: none;
+}
+
+.short_description .trumbowyg-box{
+    min-height: inherit !important;
+}
+.short_description .trumbowyg-editor{
+    min-height: 100px !important;
+    height: 100px !important;
+}
+
 .dropdown-toggle[data-v-72f50e00]::after{
     display: none;
 }
@@ -939,6 +981,39 @@ p[data-v-62870d08]{
 p[data-v-00d52091]{
     margin-bottom: 10px;
     font-size: 15px;
+}
+
+.list[data-v-03bb2d86]{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.main-footer[data-v-03bb2d86] {
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+    color: #6a6d71;
+    padding: 1rem;
+    margin: 0px !important;
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+}
+.wrapper[data-v-03bb2d86]{
+    background: #f8f8f8;
+    min-height: 80vh;
+}
+.form-control.search[data-v-03bb2d86]{
+    width: 400px;
+    height: 50px;
+    font-size: 17px;
+}
+.search-btn[data-v-03bb2d86]{
+    height: 50px;
+    font-size: 17px;
+}
+.wrapper .container[data-v-03bb2d86]{
+    padding-bottom: 200px;
 }
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
@@ -10005,4 +10080,12 @@ div:not(.view) .multiselect__option {
 
 div:not(.view) .multiselect__option--highlight:after {
   background: #0069d9;
+}
+
+.ui-state-highlight {
+  height: 172px;
+  width: 100%;
+  background: #fdfdd0;
+  border: 1px dashed rgba(0, 0, 0, 0.125);
+  margin-top: 1rem !important;
 }

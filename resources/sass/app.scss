@@ -8,6 +8,8 @@
 @import "~animate.css/animate.css";
 // Multiselect
 @import "~vue-multiselect/dist/vue-multiselect.min.css";
+// JQuery Ui
+//@import "~jquery-ui/themes/base/all";
 // General Style
 div:not(.view) .multiselect li:not(.multiselect__element) .multiselect__option{
     display: none !important;
@@ -24,4 +26,11 @@ div:not(.view) .multiselect__option{
 }
 div:not(.view) .multiselect__option--highlight:after{
     background: #0069d9;
+}
+.ui-state-highlight {
+    height: 172px;
+    width: 100%;
+    background: #fdfdd0;
+    border: 1px dashed rgba(0,0,0,.125);
+    margin-top: 1rem!important;
 }

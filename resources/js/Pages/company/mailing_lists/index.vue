@@ -44,6 +44,7 @@
                             <tr>
                                 <th width="50">#</th>
                                 <th>{{__("l.Name")}}</th>
+                                <th width="100">{{__("l.N° Emails")}}</th>
                                 <th width="200">{{__("l.Custom Fields")}}</th>
                                 <th width="160">{{__("l.Created At")}}</th>
                                 <th class="text-center" width="240">{{__("l.Actions")}}</th>
@@ -53,7 +54,8 @@
                             <tr v-for="(list, i) in lists">
                                 <td class="text-center">{{ i + 1 }}</td>
                                 <td>{{list.name}}</td>
-                                <td><div v-for="field in list.fields">{{field.name}}</div></td>
+                                <td class="text-center">{{list.emails_count}}</td>
+                                <td><ul class="pl-3 m-0"><li v-for="field in list.fields">{{field.name}}</li></ul></td>
                                 <td>{{list.created_at|format-date-time}}</td>
                                 <td class="text-center align-middle">
                                     <inertia-link :href="route('mailing_lists.view', list.id)" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> {{__("l.Emails")}}</inertia-link>
