@@ -23,9 +23,12 @@ class BaseController extends Controller
             $logo = (@$settings["logo"]) ? asset("storage/app/".$settings["logo"]->value) : asset("public/no-image.png");
             $login_page_image = (@$settings["login_page_image"]) ? asset("storage/app/".$settings["login_page_image"]->value) : '';
             View::share('logo', $logo);
-            $unread_messages = MailboxMessage::with("user_from", "user_to", "label")
-                ->where("to" , Auth::guard("web")->user()->id)
-                ->where(["draft" => 0, "trash" => 0, "read" => 0])->get();
+            $unread_messages = collect();
+            if(Auth::guard("web")->check()){
+                $unread_messages = MailboxMessage::with("user_from", "user_to", "label")
+                    ->where("to" , Auth::guard("web")->user()->id)
+                    ->where(["draft" => 0, "trash" => 0, "read" => 0])->get();
+            }
             Inertia::share('flash', function () use($app_name, $logo, $login_page_image, $unread_messages, $settings) {
                 return [
                     'message' => Session::get('message'),

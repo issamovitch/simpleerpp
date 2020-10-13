@@ -24,14 +24,15 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
     });
 
     // Auth
-    Route::get('login', 'BaseController@index')->name('login');
-    Route::post('login', 'Auth\LoginController@login')->name('login');
+    Route::get('login', 'BaseController@index')->name('login')->middleware("guest");
+    Route::post('login', 'Auth\LoginController@login')->name('login')->middleware("guest");
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request')->middleware("guest");
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email')->middleware("guest");
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset')->middleware("guest");
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update')->middleware("guest");
 
+    // Admin Routes
     Route::group(["middleware" => "auth"], function() {
 
         Route::get("dashboard", "Dashboard@index")->name('dashboard');
