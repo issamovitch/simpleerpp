@@ -321,6 +321,7 @@ export default {
     left: -100px;
     background: #fff;
     z-index: 10401;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);
 }
 
 .backdrop{

@@ -35,6 +35,7 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
     // Admin Routes
     Route::group(["middleware" => "auth"], function() {
 
+        // Dashboard
         Route::get("dashboard", "Dashboard@index")->name('dashboard');
 
         // Users
@@ -147,6 +148,27 @@ Route::group(["namespace" => "App\Http\Controllers"], function(){
             Route::post('submit_campaign', "Surveys@submit_campaign")->name("submit_campaign");
             Route::get('delete_campaign/{id?}', "Surveys@delete_campaign")->name("delete_campaign");
             Route::get('send_email/{id?}', "Surveys@send_email")->name("send_email");
+        });
+
+        // Projects
+        Route::group(["as" => "projects.","prefix" => "projects"], function () {
+            Route::get('index', "Projects@index")->name("index");
+            Route::get('add', "Projects@add")->name("add");
+            Route::post('save', "Projects@save")->name("save");
+            Route::get('edit/{id?}', "Projects@edit")->name("edit");
+            Route::post('update', "Projects@update")->name("update");
+            Route::get('delete/{id?}', "Projects@delete")->name("delete");
+            /*
+            Route::get('status/{id?}/{status?}', "Projects@status")->name("status");
+            Route::get('details/{id?}', "Projects@details")->name("details");
+            Route::post('save_question', "Projects@save_question")->name("save_question");
+            Route::get('delete_question/{id?}', "Projects@delete_question")->name("delete_question");
+            Route::post('update_question', "Projects@update_question")->name("update_question");
+            Route::post('change_questions_order', "Projects@change_questions_order")->name("change_questions_order");
+            Route::post('submit_campaign', "Projects@submit_campaign")->name("submit_campaign");
+            Route::get('delete_campaign/{id?}', "Projects@delete_campaign")->name("delete_campaign");
+            Route::get('send_email/{id?}', "Projects@send_email")->name("send_email");
+            */
         });
 
         // Settings

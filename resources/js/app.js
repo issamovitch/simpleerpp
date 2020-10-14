@@ -70,9 +70,11 @@ Vue.use(ToggleButton)
 
 // VeeValidate
 import VeeValidate from 'vee-validate';
-Vue.use(VeeValidate)
+Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
 import { Validator } from 'vee-validate';
 Validator.dictionary.container[lang].messages.required = Vue.prototype.__("l.This field is required")
+Validator.dictionary.container[lang].messages.date_format = Vue.prototype.__("l.This field must be in the format yyyy-MM-dd")
+
 // JQuery
 $(document).on("shown.bs.modal", ".modal:not(.view)", function () {
     $('input:first', this). trigger('focus')
@@ -80,6 +82,11 @@ $(document).on("shown.bs.modal", ".modal:not(.view)", function () {
 
 // Global Variables
 Vue.prototype.colors = ["primary", "secondary", "info", "success", "warning", "danger", "black", "gray-dark", "gray", "indigo", "lightblue", "navy", "purple", "fuchsia", "pink", "maroon", "orange", "lime", "teal", "olive"]
+
+// VueSelect
+import '@desislavsd/vue-select/dist/vue-select.css'
+import VueSelect from '@desislavsd/vue-select'
+Vue.use(VueSelect, { /* options */ } ) // registers <v-select /> globally
 
 // Initialize App
 const app = document.getElementById('app')
